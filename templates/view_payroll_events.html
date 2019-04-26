@@ -1,0 +1,62 @@
+<head>
+    <title>View Payroll Events</title>
+    <style>
+        table {
+            text-align: center;
+        }
+
+        td {
+            width: 100px;
+        }
+
+        th {
+            width: 100px;
+        }
+    </style>
+</head>
+
+{% block title %}
+Payroll Events
+{% endblock %}
+
+{% block page_content %}
+<a href="/main_menu"> <input type="button" value="Back to Main Menu"></a>
+{% if payroll_events != [] %}
+<div class='table-responsive'>
+    <table class='table table-striped table-hover'>
+        <thead>
+            <tr>
+                <th>Date Paid</th>
+                <th>Employee</th>
+                <th>Disbursement</th>
+                <th>Withholding</th>
+                <th>Salary</th>
+                <th>Bonus</th>
+                <th>Federal Tax</th>
+                <th>State Tax</th>
+                <th>Social Security</th>
+                <th>Medicare</th>
+            </tr>
+        </thead>
+        <tbody style="cursor:pointer;">
+            {% for payroll_event in payroll_events %}
+            <tr>
+                <td>{{ payroll_event.date_paid }}</td>
+                <td>{{ payroll_event.employee }}</td>
+                <td>8063.55</td>
+                <td>4436.45</td>
+                <td>12500.00</td>
+                <td>0.00</td>
+                <td>2861.45</td>
+                <td>618.75</td>
+                <td>775.00</td>
+                <td>181.25</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<h2 align="center"><strong>Oops! You have no payroll event!</strong></h2>
+{% endif %}
+{% endblock %}

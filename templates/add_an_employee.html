@@ -1,0 +1,45 @@
+<head>
+    <title>Add an Employee</title>
+</head>
+
+<h1>Add a Employee</h1>
+{% block page_content %}
+<form action="{{ url_for('add_an_employee') }}" method=post align="center">
+    <div>
+        <p>Last Name</p>
+        <input type=text size=30 name=last_name>
+        <p>First Name</p>
+        <input type=text size=30 name=first_name>
+    </div>
+    <div>
+        <p>Address Line 1</p>
+        <input type=text size=30 name=address_line_1>
+        <p>Address Line 2</p>
+        <input type=text size=30 name=address_line_2>
+    </div>
+    <div>
+        <p>City</p>
+        <input type=text size=30 name=city_name>
+        <p>State</p>
+        <input type=text size=30 name=state_name>
+    </div>
+    <div>
+        <p>Zip Code</p>
+        <input type=text size=30 name=zip_code>
+    </div>
+    <div>
+        <p>Social Security Number</p>
+        <input type=text size=30 name=social_security_number>
+        <p>Number of Withholdings</p>
+        <input type=text size=30 name=number_of_withholdings>
+        <p>Salary</p>
+        <input type=text size=30 name=salary>
+    </div>
+
+    <br/>
+    <div>
+        <input type="submit" value="OK">
+        <button><a href="/main_menu">Cancel</a></button>
+    </div>
+</form>
+{% endblock %}

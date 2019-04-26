@@ -1,0 +1,26 @@
+<head>
+    <title>Pay an Employee</title>
+</head>
+
+<h1>Pay an Employee</h1>
+{% block page_content %}
+{% if employees != [] %}
+<form action="{{ url_for('pay_an_employee') }}" method=post align="center">
+    <select name="employee_last_name">
+        {% for employee in employees %}
+        <option value="{{ employee.last_name }}">{{ employee.last_name }}</option>
+        {% endfor %}
+    </select>
+        <p>Date (YYYYMMDD)</p>
+        <input type=text size=30 name=date placeholder="">
+
+    <div>
+        <input type="submit" value="OK">
+        <a href="/main_menu"> <input type="button" value="Cancel"></a>
+    </div>
+</form>
+{% else %}
+<a href="/main_menu"> <input type="button" value="Back to Main Menu"></a>
+<h2 align="center"><strong>Oops! You are alone!</strong></h2>
+{% endif %}
+{% endblock %}

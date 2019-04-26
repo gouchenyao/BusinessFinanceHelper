@@ -1,0 +1,74 @@
+<head>
+    <title>View Income Statement</title>
+    <style>
+        table {
+            text-align: center;
+        }
+        td {
+            width: 100px;
+        }
+        th {
+            width: 100px;
+        }
+    </style>
+</head>
+
+{% block title %}
+Income Statement
+{% endblock %}
+
+{% block page_content %}
+<a href="/main_menu"> <input type="button" value="Back to Main Menu"></a>
+<div class='table-responsive'>
+    <table class='table table-striped table-hover'>
+        <thead>
+            <tr>
+                <th>Sales</th>
+                <th>Cost of Goods</th>
+                <th>Gross Profit</th>
+            </tr>
+        </thead>
+        <tbody style="cursor:pointer;">
+            <tr>
+                <td>{{ income_statement.sales }}</td>
+                <td>{{ income_statement.cost_of_goods }}</td>
+                <td>{{ gross_profit }}</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th>Payroll</th>
+                <th>Payroll Withholding</th>
+                <th>Bills</th>
+                <th>Annual Expenses</th>
+                <th>Total Expenses</th>
+            </tr>
+        </thead>
+        <tbody style="cursor:pointer;">
+            <tr>
+                <td>{{ income_statement.payroll }}</td>
+                <td>{{ income_statement.payroll_withholding }}</td>
+                <td>{{ income_statement.bills }}</td>
+                <td>{{ income_statement.annual_expenses }}</td>
+                <td>{{ total_expenses }}</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th>Other Income</th>
+                <th>Operating Income</th>
+                <th>Income Taxes</th>
+                <th>Net Income</th>
+            </tr>
+        </thead>
+        <tbody style="cursor:pointer;">
+            <tr>
+                <td>{{ income_statement.other_income }}</td>
+                <td>{{ operating_income }}</td>
+                <td>{{ income_taxes }}</td>
+                <td>{{ net_income }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+<head>
+    <title>Add a Vendor</title>
+</head>
+
+<h1>Add a Vendor</h1>
+{% block page_content %}
+<form action="{{ url_for('add_a_vendor') }}" method=post align="center">
+    <div>
+        <p>Company Name</p>
+        <input type=text size=30 name=company_name>
+    </div>
+    <div>
+        <p>Part</p>
+        <input type=text size=30 name=part>
+        <p>Price Per Unit</p>
+        <input type=text size=30 name=price_per_unit>
+    </div>
+    <div>
+        <p>Address Line 1</p>
+        <input type=text size=30 name=address_line_1>
+        <p>Address Line 2</p>
+        <input type=text size=30 name=address_line_2>
+    </div>
+    <div>
+        <p>City</p>
+        <input type=text size=30 name=city_name>
+        <p>State</p>
+        <input type=text size=30 name=state_name>
+    </div>
+    <div>
+        <p>Zip Code</p>
+        <input type=text size=30 name=zip_code>
+        <p>Price</p>
+        <input type=text size=30 name=price>
+    </div>
+    <br/>
+    <div>
+        <input type="submit" value="OK">
+        <button><a href="/main_menu">Cancel</a></button>
+    </div>
+</form>
+{% endblock %}

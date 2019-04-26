@@ -1,0 +1,116 @@
+<head>
+    <title>View Balance Sheet</title>
+    <style>
+        table {
+            text-align: center;
+        }
+        td {
+            width: 100px;
+        }
+        th {
+            width: 100px;
+        }
+    </style>
+</head>
+
+{% block title %}
+Balance Sheet
+{% endblock %}
+
+{% block page_content %}
+<a href="/main_menu"> <input type="button" value="Back to Main Menu"></a>
+<div class='table-responsive'>
+    <table class='table table-striped table-hover'>
+        <thead>
+            <tr>
+                <th>Cash</th>
+                <th>Accounts Receivable</th>
+                <th>Inventory</th>
+                <th>Total Current Assets</th>
+            </tr>
+        </thead>
+        <tbody style="cursor:pointer;">
+            <tr>
+                <td>{{ balance_sheet.cash }}</td>
+                <td>{{ balance_sheet.accounts_receivable }}</td>
+                <td>{{ balance_sheet.inventory }}</td>
+                <td>{{ total_current_assets }}</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th>Land and Buildings</th>
+                <th>Equipment</th>
+                <th>Furniture and Fixtures</th>
+                <th>Total Fixed Assets</th>
+            </tr>
+        </thead>
+        <tbody style="cursor:pointer;">
+            <tr>
+                <td>{{ balance_sheet.land_and_buildings }}</td>
+                <td>{{ balance_sheet.equipment }}</td>
+                <td>{{ balance_sheet.furniture_and_fixtures }}</td>
+                <td>{{ total_fixed_assets }}</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th>Total Assets</th>
+            </tr>
+        </thead>
+        <tbody style="cursor:pointer;">
+            <tr>
+                <td>{{ total_assets }}</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th>Accounts Payable</th>
+                <th>Notes Payable</th>
+                <th>Accruals</th>
+                <th>Total Current Liabilities</th>
+            </tr>
+        </thead>
+        <tbody style="cursor:pointer;">
+            <tr>
+                <td>{{ balance_sheet.accounts_payable }}</td>
+                <td>{{ balance_sheet.notes_payable }}</td>
+                <td>{{ balance_sheet.accruals }}</td>
+                <td>{{ total_current_liabilities }}</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th>Mortgage</th>
+                <th>Total Long Term Debt</th>
+            </tr>
+        </thead>
+        <tbody style="cursor:pointer;">
+            <tr>
+                <td>{{ balance_sheet.mortgage }}</td>
+                <td>{{ total_long_term_debt }}</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th>Total Liabilities</th>
+            </tr>
+        </thead>
+        <tbody style="cursor:pointer;">
+            <tr>
+                <td>{{ total_liabilities }}</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th>Net Worth</th>
+            </tr>
+        </thead>
+        <tbody style="cursor:pointer;">
+            <tr>
+                <td>{{ net_worth }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

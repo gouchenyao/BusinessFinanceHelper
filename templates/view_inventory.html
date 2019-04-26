@@ -1,0 +1,56 @@
+<head>
+    <title>View Inventory</title>
+    <style>
+        table {
+            text-align: center;
+        }
+
+        td {
+            width: 100px;
+        }
+
+        th {
+            width: 100px;
+        }
+    </style>
+</head>
+
+{% block title %}
+Inventory
+{% endblock %}
+
+{% block page_content %}
+<a href="/main_menu"> <input type="button" value="Back to Main Menu"></a>
+{% if inventory_buy != [] %}
+<div class='table-responsive'>
+    <table class='table table-striped table-hover'>
+        <thead>
+            <tr>
+                <th>Part</th>
+                <th>Price Per Unit</th>
+                <th>Quantity</th>
+                <th>Value</th>
+                <th>Re-order</th>
+            </tr>
+        </thead>
+        <tbody style="cursor:pointer;">
+            {% for item in inventory_buy %}
+            <tr>
+                <td>{{ item.part }}</td>
+                <td>{{ item.price_per_unit }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.total_value }}</td>
+                {% if item.quantity|int < 1000 %}
+                <td>X</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<h2 align="center"><strong>Oops! You have no inventory of parts!</strong></h2>
+{% endif %}
+<!-- <b>Number of Units to Built: {{ inventory_sell.can_be_built_units }}</b> -->
+<b>Number of Units in Stock: {{ inventory_sell.complete_units }}</b>
+{% endblock %}

@@ -1,0 +1,58 @@
+<head>
+    <title>View Customers</title>
+    <style>
+        table {
+            text-align: center;
+        }
+        td {
+            width: 100px;
+        }
+        th {
+            width: 100px;
+        }
+    </style>
+</head>
+
+{% block title %}
+Customers
+{% endblock %}
+
+{% block page_content %}
+<a href="/main_menu"> <input type="button" value="Back to Main Menu"></a>
+{% if customers != [] %}
+<div class='table-responsive'>
+    <table class='table table-striped table-hover'>
+        <thead>
+            <tr>
+                <th>Company Name</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Address Line 1</th>
+                <th>Address Line 2</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip Code</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody style="cursor:pointer;">
+            {% for customer in customers %}
+            <tr>
+                <td>{{ customer.company_name }}</td>
+                <td>{{ customer.last_name }}</td>
+                <td>{{ customer.first_name }}</td>
+                <td>{{ customer.address_line_1 }}</td>
+                <td>{{ customer.address_line_2 }}</td>
+                <td>{{ customer.city_name }}</td>
+                <td>{{ customer.state_name }}</td>
+                <td>{{ customer.zip_code }}</td>
+                <td>{{ customer.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<h2 align="center"><strong>Oops! You have no customers!</strong></h2>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,52 @@
+<head>
+    <title>View Invoices</title>
+    <style>
+        table {
+            text-align: center;
+        }
+        td {
+            width: 100px;
+        }
+        th {
+            width: 100px;
+        }
+    </style>
+</head>
+
+{% block title %}
+Invoices
+{% endblock %}
+
+{% block page_content %}
+<a href="/main_menu"> <input type="button" value="Back to Main Menu"></a>
+{% if invoices != [] %}
+<div class='table-responsive'>
+    <table class='table table-striped table-hover'>
+        <thead>
+            <tr>
+                <th>Invoice Number</th>
+                <th>Invoice Date</th>
+                <th>Customer</th>
+                <th>Quantity</th>
+                <th>Price Per Unit</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody style="cursor:pointer;">
+            {% for invoice in invoices %}
+            <tr>
+                <td>{{ invoice.invoice_number }}</td>
+                <td>{{ invoice.invoice_date }}</td>
+                <td>{{ invoice.customer }}</td>
+                <td>{{ invoice.quantity }}</td>
+                <td>{{ invoice.price_per_unit }}</td>
+                <td>{{ invoice.total_value }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<h2 align="center"><strong>Oops! You have no invoices!</strong></h2>
+{% endif %}
+{% endblock %}

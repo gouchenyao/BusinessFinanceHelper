@@ -1,0 +1,56 @@
+<head>
+    <title>View Vendors</title>
+    <style>
+        table {
+            text-align: center;
+        }
+        td {
+            width: 100px;
+        }
+        th {
+            width: 100px;
+        }
+    </style>
+</head>
+
+{% block title %}
+Vendors
+{% endblock %}
+
+{% block page_content %}
+<a href="/main_menu"> <input type="button" value="Back to Main Menu"></a>
+{% if vendors != [] %}
+<div class='table-responsive'>
+    <table class='table table-striped table-hover'>
+        <thead>
+            <tr>
+                <th>Company Name</th>
+                <th>Part</th>
+                <th>Price Per Unit</th>
+                <th>Address Line 1</th>
+                <th>Address Line 2</th>
+                <th>City Name</th>
+                <th>State Name</th>
+                <th>Zip Code</th>
+            </tr>
+        </thead>
+        <tbody style="cursor:pointer;">
+            {% for vendor in vendors %}
+            <tr>
+                <td>{{ vendor.company_name }}</td>
+                <td>{{ vendor.part }}</td>
+                <td>{{ vendor.price_per_unit }}</td>
+                <td>{{ vendor.address_line_1 }}</td>
+                <td>{{ vendor.address_line_2 }}</td>
+                <td>{{ vendor.city_name }}</td>
+                <td>{{ vendor.state_name }}</td>
+                <td>{{ vendor.zip_code }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<h2 align="center"><strong>Oops! You have no vendors!</strong></h2>
+{% endif %}
+{% endblock %}
