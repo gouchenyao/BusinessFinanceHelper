@@ -11,7 +11,7 @@ This tool uses a number of open source projects to work properly:
 
 ## Installation
 
-This tool requires Pipenv and Python 3.6 to run.
+This tool requires Python 3.6 to run.
 
 Install the dependencies and dev-dependencies from Pipfile using Pipenv, initialize the database and start the server.
 
